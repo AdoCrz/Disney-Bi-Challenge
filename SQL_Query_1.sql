@@ -11,7 +11,7 @@
 WITH streams_june AS (
   SELECT account_id,
          watch_length_ms
-  FROM table_a
+  FROM TABLE_A
   WHERE is_stream = 1
     AND start_date_est >= DATE '2021-06-01'
     AND start_date_est <  DATE '2021-07-01'
@@ -32,7 +32,7 @@ WITH streams_june AS (
   SELECT account_id,
          account_home_country,
          watch_length_ms
-  FROM table_a
+  FROM TABLE_A
   WHERE is_stream = 1
     AND start_date_est >= DATE '2021-06-01'
     AND start_date_est <  DATE '2021-07-01'
@@ -56,7 +56,7 @@ WITH streams_june AS (
   SELECT account_id,
          account_home_country,
          watch_length_ms
-  FROM table_a
+  FROM TABLE_A
   WHERE is_stream = 1
     AND start_date_est >= DATE '2021-06-01'
     AND start_date_est <  DATE '2021-07-01'
