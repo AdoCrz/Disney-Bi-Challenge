@@ -5,7 +5,7 @@
 -- Get all accounts that streamed Loki
 WITH loki_viewers AS (
   SELECT DISTINCT account_id
-  FROM table_a
+  FROM TABLE_A
   WHERE is_stream = 1
     AND watch_length_ms > 0
     AND UPPER(COALESCE(series_full_title, '')) = 'LOKI'
@@ -14,7 +14,7 @@ WITH loki_viewers AS (
 SELECT
   COALESCE(t_a.series_full_title, t_a.program_full_title) AS content_title,
   COUNT(DISTINCT t_a.account_id) AS viewers
-FROM table_a AS t_a
+FROM TABLE_A AS t_a
 JOIN loki_viewers AS lv USING (account_id)
 WHERE t_a.is_stream = 1
   AND t_a.watch_length_ms > 0
@@ -31,7 +31,7 @@ ORDER BY viewers DESC, content_title;
 
 WITH loki_viewers AS (
   SELECT DISTINCT account_id
-  FROM table_a
+  FROM TABLE_A
   WHERE is_stream = 1
     AND watch_length_ms > 0
     AND UPPER(COALESCE(series_full_title, '')) = 'LOKI'
