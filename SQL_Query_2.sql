@@ -3,7 +3,7 @@
 -- ============================================================
 
 SELECT COUNT(DISTINCT account_id) AS accounts_who_watched_series
-FROM table_a
+FROM TABLE_A
 WHERE account_home_country = 'AR'
   AND is_stream = 1
   AND watch_length_ms > 0
@@ -21,7 +21,7 @@ WHERE account_home_country = 'AR'
 
 SELECT account_id, series_full_title,
   ROUND(SUM(watch_length_ms) / 3600000.0, 2) AS total_hours_streamed
-FROM table_a
+FROM TABLE_A
 WHERE account_home_country = 'AR'
   AND is_stream = 1
   AND watch_length_ms > 0
